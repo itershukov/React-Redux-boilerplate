@@ -37,7 +37,7 @@
   "scripts": {
     "precommit": "lint-staged",
     "start": "react-scripts start",
-    "dev": "concurrently \"npm run mock\" \"react-scripts start\"",
+    "dev": "better-npm-run run-dev",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "mock": "better-npm-run start-mock-server",
@@ -53,6 +53,12 @@
     },
     "generate-mock-data": {
       "command": "node ./mockServer/generateMockData",
+      "env": {
+        "DEBUG": "app:*"
+      }
+    },
+    "run-dev": {
+      "command": "concurrently \"npm run mock\" \"react-scripts start\"",
       "env": {
         "DEBUG": "app:*"
       }
