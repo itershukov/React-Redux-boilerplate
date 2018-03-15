@@ -22,7 +22,6 @@ const createStore = (initialState = {}, history) => {
     ReduxThunk,
     sagaMiddleware,
     wormhole(state => state.configuration, 'configuration'),
-    applyToRoot(createLogger()),
     routerMiddleware(history)
   ];
 
@@ -33,6 +32,8 @@ const createStore = (initialState = {}, history) => {
   let composeEnhancers = compose;
 
   if (process.env.NODE_ENV === 'development') {
+    middleware.push(applyToRoot(createLogger()));
+
     if (typeof window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ === 'function') {
       composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__;
     }
