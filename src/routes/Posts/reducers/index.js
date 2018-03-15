@@ -1,8 +1,8 @@
 /**
  * Created by itersh on 06.03.2018.
  */
-import { buildCRUDActionHandlers } from '../../../helpers/actionHandlerFactory';
-import { types } from '../../../actions/posts';
+import { buildCRUDActionHandlers } from 'helpers/actionHandlerFactory';
+import { types } from 'actions/posts';
 // ------------------------------------
 // Action Handlers
 // ------------------------------------

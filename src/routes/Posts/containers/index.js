@@ -11,7 +11,7 @@ import {
   createPost,
   updatePost,
   deletePost
-} from '../../../actions/posts';
+} from 'actions/posts';
 import Reducer from '../reducers';
 
 export const getMyPosts = (posts = []) => {

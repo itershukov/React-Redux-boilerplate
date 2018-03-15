@@ -2,13 +2,13 @@
  * Created by itersh on 06.03.2018.
  */
 import { compose, combineReducers } from 'redux';
-import { createStore as createDynamicReduxStore } from 'redux-dynamic-reducer';
 import createSagaMiddleware from 'redux-saga';
 import ReduxThunk from 'redux-thunk';
+import wormhole from 'redux-subspace-wormhole';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
-import wormhole from 'redux-subspace-wormhole';
 import { applyMiddleware, applyToRoot } from 'redux-subspace';
+import { createStore as createDynamicReduxStore } from 'redux-dynamic-reducer';
 
 import rootSaga from '../sagas/sagas';
 

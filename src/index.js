@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import createStore from './store/createStore';
-import registerServiceWorker from './registerServiceWorker';
+import 'index.css';
+import createStore from 'store/createStore';
+import registerServiceWorker from 'registerServiceWorker';
 import createHistory from 'history/createBrowserHistory';
 
 // ========================================================
@@ -30,7 +30,7 @@ const store = createStore(initialState, history);
 const MOUNT_NODE = document.getElementById('root');
 
 let render = () => {
-  import('./containers/App/App')
+  import('containers/App/App')
     .then(module => module.default)
     .then(App => {
       ReactDOM.render(<App store={store} history={history} />, MOUNT_NODE);

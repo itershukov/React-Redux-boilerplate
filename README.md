@@ -1,6 +1,6 @@
 ## To start
 
-npm i <br>
+npm i OR yarn install <br>
 npm run dev <br>
 
 ## Used tools

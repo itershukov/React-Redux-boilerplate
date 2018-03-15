@@ -1,7 +1,7 @@
 /**
  * Created by itersh on 19.02.2018.
  */
-import _ from 'lodash';
+import unionBy from 'lodash.unionby';
 
 export function buildDefaultActionHandlers(namespace, methods, types) {
   const apiActionTypes = methods
@@ -60,7 +60,7 @@ export function buildCRUDActionHandlers(namespace, types, options = {}) {
     r[GET] = r[POST] = r[PUT] = r[PATCH] = (state, action) => ({
       ...state,
       ...action.payload,
-      list: _.unionBy([action.payload[type]], state.namespace.list, key),
+      list: unionBy([action.payload[type]], state.namespace.list, key),
       receivedAt: new Date().toISOString()
     });
 

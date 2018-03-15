@@ -11,7 +11,7 @@ import {
   createUser,
   updateUser,
   deleteUser
-} from '../../../actions/users';
+} from 'actions/users';
 import Reducer from '../reducers';
 
 export const getFriendList = (users = []) => {
